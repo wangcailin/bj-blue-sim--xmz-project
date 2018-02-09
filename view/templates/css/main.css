@@ -1,0 +1,221 @@
+html,body{min-height:100%;height:100%;}
+*{
+	margin:0;
+	padding:0;
+	-webkit-touch-callout:none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body{
+    background:#0b1917;
+}
+#box{
+    width:320px;
+    height:100%;
+    position:relative;
+    transform-origin: left top;
+    left:0;
+    top:0;
+}
+.container{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#wf_vdo{
+    position:absolute;
+    width:100%;
+    height:101%;
+    left:0;
+    top:0;
+    object-fit: fill;
+}
+/*loading页面start*/
+.loading{
+    text-align: center;
+    position:absolute;
+    z-index:999;
+    background:#fff;
+    width:100%;
+    height:100%;
+    background:#0b1917;
+    box-sizing: border-box;
+    padding-top:70%;
+}
+.loading .loading img{
+    display: block;
+}
+.loading .loading_text{
+	width:166px;
+	margin:0 auto;
+	height:35px;
+	position: relative;
+}
+.loading .loading_text .load_text{
+	width:93px;
+	margin:0 auto;
+	padding-top:9px;
+}
+.loading .loading_text .hand_left{
+	width:35px;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.left_hover{
+	animation: handLeftRock 1.2s infinite ease;
+	-webkit-animation: handLeftRock 1.2s infinite ease;	
+}
+.loading .loading_text .hand_right{
+	width:35px;
+	position: absolute;
+	top:0;
+	right:0;
+}
+.right_hover{
+	animation: handRightRock 1.2s infinite ease;
+	-webkit-animation: handRightRock 1.2s infinite ease;
+}
+.loading .load_num{
+	width:166px;
+	margin:0 auto;
+	height:32px;
+	line-height:32px;
+	font-size: 15px;
+	color:#9c9c9c;
+	font-family: helvetica;
+}
+.loading .start_btn{
+	width:102px;
+	margin:0 auto;
+	margin-top:30px;
+	display: none;
+	-webkit-animation: aniScale 1s infinite linear;
+	animation:aniScale 1s infinite linear;
+}
+
+/*左手动画*/
+@keyframes handLeftRock{
+    0%,100%{
+        transform: translate(0px,0px);
+    }
+    50%{
+        transform: translate(5px,-10px);
+    }
+}
+@-webkit-keyframes handLeftRock{
+    0%,100%{
+        transform: translate(0px,0px);
+    }
+    50%{
+        transform: translate(5px,-10px);
+    }
+}
+/*右手动画*/
+@keyframes handRightRock{
+    0%,100%{
+        transform: translate(0px,0px);
+    }
+    50%{
+        transform: translate(-5px,-10px);
+    }
+}
+@-webkit-keyframes handRightRock{
+    0%,100%{
+        transform: translate(0px,0px);
+    }
+    50%{
+        transform: translate(-5px,-10px);
+    }
+}
+
+.hand{
+    -webkit-animation: toright 0.8s infinite linear;
+    animation: toright 0.8s infinite linear;
+}
+.btn_up{
+    -webkit-animation: aniScale 1s infinite linear;
+	animation:aniScale 1s infinite linear;
+}
+@keyframes aniScale {
+	0%,100%{
+	    transform: scale(1);
+	}
+	50%{
+	    transform: scale(1.1);
+	}
+}
+@-webkit-keyframes aniScale{
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+}
+/*loading页面end*/
+
+
+/*分享页面start*/
+.played{
+    display:none;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+.played .point{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+}
+.played .share_card{
+	width:74px;
+	height:51px;
+	position: absolute;
+	top:15px;
+	right:10px;
+	animation: arrowRock 1.2s infinite ease;
+	-webkit-animation: arrowRock 1.2s infinite ease;	
+}
+.played .share_card .share_text{
+	width:42px;
+	position: absolute;
+	left:0;
+	top:2px;
+}
+.played .share_card .share_arrow{
+	width:62px;
+	position: absolute;
+	top:0;
+	right:0;
+}
+/*分享箭头动画*/
+@keyframes arrowRock{
+    0%,100%{
+        transform: translate(0px,0px);
+    }
+    50%{
+        transform: translate(-10px,5px);
+    }
+}
+@-webkit-keyframes arrowRock{
+    0%,100%{
+        transform: translate(0px,0px);
+    }
+    50%{
+        transform: translate(-10px,5px);
+    }
+}
+
+
+
+
+/*分享页面end*/
+

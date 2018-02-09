@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+		<link rel="stylesheet" href="{{$cssSite}}main.css">
+		<script type="text/javascript" src="{{$jsSite}}jquery.js"></script>
+		<script src="{{$jsSite}}h5scale.js"></script>
+		<title>年年送祝福，今年有点酷</title>
+	</head>
+	<body>
+		<div id="box" style='overflow:hidden'>
+			<div class="loading">
+				<div class='loading_text'>
+					<img src="{{$imageSite}}hand_left.png" alt="" class='hand_left left_hover'/>
+					<img src="{{$imageSite}}font_1.png" alt="" class='load_text'/>
+					<img src="{{$imageSite}}hand_right.png" alt="" class='hand_right right_hover'/>
+				</div>
+				<div class='load_num'><span>0<span>%</div>
+				<img src="{{$imageSite}}start_btn.png" alt="" class='start_btn' monitor="一起RAP迎新春,点击"/>
+			</div> 
+			<div class="container">
+				<video class="video-box" id="wf_vdo" preload="auto" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x-webkit-airplay="true" x5-video-player-fullscreen="true" x5-video-orientation="portraint" src="http://www.wechat.siemens.com.cn/external/sim_healthcare/view/templates/images/2.mp4" width='100%' height='100%'></video>
+				<div class="played">
+					<img src="{{$imageSite}}result.jpg" class="point" />
+					<img src="{{$imageSite}}result.jpg" class="point point_1" />
+					<div class='share_card'>
+						<img src="{{$imageSite}}share_text.png" alt="" class='share_text'/>
+						<img src="{{$imageSite}}share_arrow.png" alt="" class='share_arrow'/>
+					</div>
+				</div>
+			</div>			
+	   </div>
+	   <script>
+			//loading 页面文字gif
+			var pic = new Array("{{$imageSite}}font_1.png","{{$imageSite}}font_2.png","{{$imageSite}}font_3.png","{{$imageSite}}font_4.png","{{$imageSite}}font_5.png","{{$imageSite}}font_6.png","{{$imageSite}}font_7.png","{{$imageSite}}font_8.png","{{$imageSite}}font_9.png","{{$imageSite}}font_10.png","{{$imageSite}}font_11.png","{{$imageSite}}font_12.png","{{$imageSite}}font_13.png","{{$imageSite}}font_14.png");
+	        var size = pic.length;  
+	        var i = 0;  
+	        var flag=true;
+	        function changeImg(){  
+	        	if(flag==true){
+	        		$('.load_text').attr('src', pic[i]);
+		            i++;  
+		            if (i>=size) i = 0;  
+		            var tt=setTimeout("changeImg()",600);  
+	        	}else{
+	        		clearTimeout(tt);
+	        		$('.load_text').attr('src','{{$imageSite}}font_10.png');
+	        		return
+	        	}
+	        } 
+	   	    changeImg();
+	   	    
+			//loading 加载数字变化
+			var num=0;	
+			$(this).find('.load_num').html(num+' %');
+			t=setInterval(function(){
+				num++;
+				$('.load_num').html(num+' %');
+				if(num==100){
+					clearInterval(t);
+					$('.hand_left').removeClass('left_hover');
+					$('.hand_right').removeClass('right_hover');
+					$('.load_num').hide();
+					$('.start_btn').show();	
+					flag=false;
+				}
+			},150)
+
+			//视频结束循环放图js
+			var share_pic=new Array("{{$imageSite}}pic_1.jpg","{{$imageSite}}pic_2.jpg","{{$imageSite}}pic_3.jpg","{{$imageSite}}pic_4.jpg","{{$imageSite}}pic_5.jpg","{{$imageSite}}pic_6.jpg","{{$imageSite}}pic_7.jpg","{{$imageSite}}pic_8.jpg","{{$imageSite}}pic_9.jpg","{{$imageSite}}pic_10.jpg","{{$imageSite}}pic_11.jpg","{{$imageSite}}pic_12.jpg","{{$imageSite}}pic_13.jpg","{{$imageSite}}pic_14.jpg","{{$imageSite}}pic_15.jpg","{{$imageSite}}pic_16.jpg","{{$imageSite}}pic_17.jpg","{{$imageSite}}pic_18.jpg","{{$imageSite}}pic_19.jpg","{{$imageSite}}pic_20.jpg","{{$imageSite}}pic_21.jpg","{{$imageSite}}pic_22.jpg","{{$imageSite}}pic_23.jpg","{{$imageSite}}pic_24.jpg","{{$imageSite}}pic_25.jpg","{{$imageSite}}pic_26.jpg","{{$imageSite}}pic_27.jpg","{{$imageSite}}pic_28.jpg","{{$imageSite}}pic_29.jpg","{{$imageSite}}pic_30.jpg","{{$imageSite}}pic_31.jpg","{{$imageSite}}pic_32.jpg","{{$imageSite}}pic_33.jpg","{{$imageSite}}pic_34.jpg","{{$imageSite}}pic_35.jpg","{{$imageSite}}pic_36.jpg","{{$imageSite}}pic_37.jpg","{{$imageSite}}pic_38.jpg","{{$imageSite}}pic_39.jpg","{{$imageSite}}pic_40.jpg","{{$imageSite}}pic_41.jpg","{{$imageSite}}pic_42.jpg","{{$imageSite}}pic_43.jpg","{{$imageSite}}pic_44.jpg","{{$imageSite}}pic_45.jpg","{{$imageSite}}pic_46.jpg","{{$imageSite}}pic_47.jpg","{{$imageSite}}pic_48.jpg","{{$imageSite}}pic_49.jpg","{{$imageSite}}pic_50.jpg","{{$imageSite}}pic_51.jpg","{{$imageSite}}pic_52.jpg","{{$imageSite}}pic_53.jpg","{{$imageSite}}pic_54.jpg","{{$imageSite}}pic_55.jpg","{{$imageSite}}pic_56.jpg","{{$imageSite}}pic_57.jpg","{{$imageSite}}pic_58.jpg","{{$imageSite}}pic_59.jpg","{{$imageSite}}pic_60.jpg","{{$imageSite}}pic_61.jpg","{{$imageSite}}pic_62.jpg","{{$imageSite}}pic_63.jpg","{{$imageSite}}pic_64.jpg","{{$imageSite}}pic_65.jpg","{{$imageSite}}pic_66.jpg","{{$imageSite}}pic_67.jpg","{{$imageSite}}pic_68.jpg","{{$imageSite}}pic_69.jpg","{{$imageSite}}pic_70.jpg","{{$imageSite}}pic_71.jpg","{{$imageSite}}pic_72.jpg","{{$imageSite}}pic_73.jpg","{{$imageSite}}pic_74.jpg","{{$imageSite}}pic_75.jpg","{{$imageSite}}pic_76.jpg","{{$imageSite}}pic_77.jpg","{{$imageSite}}pic_78.jpg","{{$imageSite}}pic_79.jpg","{{$imageSite}}pic_80.jpg","{{$imageSite}}pic_81.jpg","{{$imageSite}}pic_82.jpg");
+			var k=1;
+			function shareImg(){
+	    		$('.point_1').attr('src', '{{$imageSite}}pic_' + k + '.jpg');
+	            k++; 
+	            if (k>=83) k = 1;  
+	            setTimeout("shareImg()",100);  	        	
+	        } 
+	       
+			//点击按钮开始播放视频
+		   	$('.start_btn').click(function(){
+				$('.loading').hide();
+			    $('#wf_vdo')[0].play();
+			})
+		   	
+			//视频结束分享图出现
+			$('#wf_vdo')[0].addEventListener('ended', function (e) {
+			    e.preventDefault();
+			    $('#wf_vdo').remove();
+			    $('.played').show();
+			    $('.played').attr('monitor','视频结束,点击');
+			    shareImg();
+			})
+	
+	   </script>
+	   
+	   <!-- Google Tag Manager -->
+	    <script>
+			(function(w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					'gtm.start': new Date().getTime(),
+					event: 'gtm.js',
+					'openid': '{{$gaopenid}}'
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-WR8C9JB');
+		</script>
+		<!-- End Google Tag Manager -->
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WR8C9JB"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script>
+            wx.config({
+                appId: '{{$signPackage["appId"]}}',
+                timestamp: '{{$signPackage["timestamp"]}}',
+                nonceStr: '{{$signPackage["nonceStr"]}}',
+                signature: '{{$signPackage["signature"]}}',
+                jsApiList: [
+                    // 所有要调用的 API 都要加到这个列表中
+                    'closeWindow','onMenuShareTimeline','onMenuShareAppMessage','hideOptionMenu','showOptionMenu'
+                ]
+            });
+            wx.ready(function () {
+                wx.showOptionMenu();
+                wx.onMenuShareTimeline({
+                    title: '有一条来自西家的新年祝福，请您查收',
+                    link: 'http://www.wechat.siemens.com.cn/external/xmz/index.php?m=event&a=index',
+                    imgUrl: 'http://www.wechat.siemens.com.cn/external/xmz/view/templates/images/share.jpg',
+                    success: function() {
+                    },
+                    cancel: function() {
+                    }
+                });
+
+                wx.onMenuShareAppMessage({
+                    title: '有一条来自西家的新年祝福，请您查收',
+                    desc : '还在发文字拜年？今年我们来点不一样的。',
+                    link: 'http://www.wechat.siemens.com.cn/external/xmz/index.php?m=event&a=index',
+                    imgUrl: 'http://www.wechat.siemens.com.cn/external/xmz/view/templates/images/share.jpg',
+                    type: '',
+                    dataUrl: '',
+                    success: function() {
+                    },
+                    cancel: function() {
+                    }
+                });
+            });
+		</script>
+	</body>
+</html>
