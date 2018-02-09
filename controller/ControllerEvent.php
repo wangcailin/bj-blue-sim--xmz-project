@@ -57,14 +57,6 @@
 			if(!$this->sourceOpenid){
 				$this->sourceOpenid = $this->openid;
 			}
-
-			if (!$_SESSION['wechat_user']){
-                $_SESSION['wechat_user'] = $this->getuserinfo();
-            }
-            if (!$_SESSION['user']){
-                $_SESSION['user'] = $this->checkUser();
-            }
-
 			$signPackage = $this->jssdk->getSignPackage($_GET["requrl"]);
 			$this->template->assign('signPackage',$signPackage);
             $this->template->assign('blueopenid',$this->openid);
